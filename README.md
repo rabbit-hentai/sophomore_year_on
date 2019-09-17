@@ -35,7 +35,23 @@ int delete_Seq(int x,int y,SeqList* L)
         }
     }
 }
-
+//时间复杂度O（n）
+int delete_Seq1(int x,int y,SeqList* L)
+{
+    int k=0;//
+    int j=0;
+    for(int i=0;i<L->last;i++)
+    {
+        if(L->elem[i]>=x&&L->elem[i]<=y)
+           {
+              k++;
+             // L->last--;
+           }
+        else
+            L->elem[i-k]=L->elem[i],j++;
+    }
+    return j;
+}
 
 int main()
 {
